@@ -1,0 +1,63 @@
+{
+  "data": {
+    "setting": {
+      "id": "6068961875a1360c2efc5e09",
+      "blogName": "Meu blog",
+      "blogDescription": "Aqui está a descrição do meu blog",
+      "logo": {
+        "id": "60678607d725ea28d1dd3434",
+        "alternativeText": "UseEffect Hook",
+        "url": "https://res.cloudinary.com/danielv/image/upload/v1617397251/use_Effect_04c9ee2a46.jpg"
+      },
+      "menuLink": [
+        {
+          "id": "6068961875a1360c2efc5e0a",
+          "link": "#home",
+          "text": "Home",
+          "newTab": false
+        },
+        {
+          "id": "6068961875a1360c2efc5e0b",
+          "link": "#contact",
+          "text": "Contact",
+          "newTab": false
+        }
+      ],
+      "text": "<p>Feito por Daniel Vitor</p>"
+    },
+    "posts": [
+      {
+        "id": "60678874d725ea28d1dd3435",
+        "slug": "primeiros-passos-com-react-hooks-use-effect",
+        "title": "Primeiros passos com React Hooks — useEffect.",
+        "excerpt": "O Effect Hook (Hook de Efeito) te permite executar efeitos colaterais em componentes funcionais:",
+        "content": "<figure class=\"media\"><oembed url=\"https://www.youtube.com/watch?v=0ZJgIjIuY7U\"></oembed></figure><h2 style=\"margin-left:0px;\">&nbsp;</h2><h2 style=\"margin-left:0px;\">Introdução</h2><p style=\"margin-left:0px;\">Para quem já trabalha com React há algum tempo e conhece todos os ciclos de vida do componente, se enganar na hora de implementar o hook <strong>useEffect </strong>é quase certo.<br>Temos que ter em mente que <strong>useEffect </strong>não se “encaixa” a um método de ciclo de vida do componente, ele será executado quando seu componente renderizar e se quisermos mudar esse comportamento precisamos entender o segundo parâmetro (“deps”) da function <strong>useEffect</strong> (<i> useEffect(, [])</i><strong> </strong><i>&lt; — </i><strong>) , </strong>isso será primordial para trabalharmos com efeitos de renderização.</p><h2 style=\"margin-left:0px;\">&nbsp;</h2><h2 style=\"margin-left:0px;\">Comparacões</h2><pre><code class=\"language-plaintext\">Para quem ainda não foi apresentado para o lifecycle dos componentes React, essa imagem resume bem :</code></pre><figure class=\"image\"><img src=\"https://miro.medium.com/max/52/1*nPVRlmGl7ui-hGqkNgNVJg.png?q=20\" alt=\"\"></figure><figure class=\"image\"><img src=\"https://miro.medium.com/max/557/1*nPVRlmGl7ui-hGqkNgNVJg.png\" alt=\"\" srcset=\"https://miro.medium.com/max/276/1*nPVRlmGl7ui-hGqkNgNVJg.png 276w, https://miro.medium.com/max/552/1*nPVRlmGl7ui-hGqkNgNVJg.png 552w, https://miro.medium.com/max/557/1*nPVRlmGl7ui-hGqkNgNVJg.png 557w\" sizes=\"100vw\" width=\"557\"></figure><p style=\"margin-left:0px;\">Entender os ciclos de vida do componente é importantíssimo quando estamos implementando nossos <i>classComponent.</i></p><p style=\"margin-left:0px;\">Quando falamos de functionComponent e useEffect temos que ter em mente que esses componentes nada mais são do que <i>functions (simplificando bem) </i>que o React “executará” para renderizar seu componente.</p><p style=\"margin-left:0px;\">Vamos incrementar nosso componente de login do <a href=\"https://medium.com/@devjpnobrega/primeiros-passos-com-react-hooks-usestate-aa4eeeec5f4e\"><u>primeiro artigo</u></a> imaginando alguma situação hipotética.<br>Vamos imaginar que nosso componente de login vai receber em <strong>props </strong>uma propriedade <i>userId </i>que poderá ou não vir preenchida. Caso ela venha preenchida, vamos fazer um fetch na api de usuários (api fake) para trazer alguns dados do usuário para apresentação.</p><p style=\"margin-left:0px;\">Pensando em um <i>classComponent nosso componente ficaria mais ou menos assim:</i></p><p style=\"margin-left:0px;\">&nbsp;</p><pre><code class=\"language-plaintext\">import React, { Component } from 'react';\nclass LoginComponent extends Component {\n state = {\n   username: '',\n   password: '',\n   isError: false,\n   user: null,\n }\n componentDidMount() {\n   const { userId } = this.props;\n   if (userId) {\n     fetch(`https://reqres.in/api/users/${userId}`)\n       .then(resp =&gt; resp.json())\n       .then(({ data: user }) =&gt; this.setState({ user }))\n       .catch(err =&gt; this.setState({ isError: true }))\n   }    \n }\n handleChange = event =&gt; {\n   this.setState({\n     [event.target.id]: event.target.value\n   });\n }\n handleSubmit = event =&gt; {\n   event.preventDefault();\n   // ... post login user\n }\n userDescriptionRender() {\n   return (this.state.user) ?\n     `Welcome ${this.state.user.first_name}` :\n     'SignIn';\n }\n render() {\n   return (\n     &lt;&gt;\n       &lt;form onSubmit={this.handleSubmit}&gt;\n         &lt;h1&gt;{this.userDescriptionRender()}&lt;/h1&gt;\n         &lt;label&gt;UserName&lt;/label&gt;\n         &lt;input \n           type='text' \n           id='username' \n           onChange={this.handleChange} \n           value={this.state.username} \n         /&gt;\n         &lt;label&gt;Password&lt;/label&gt;\n         &lt;input \n           type='password' \n           id='password'\n           onChange={this.handleChange} \n           value={this.state.password}           \n         /&gt;\n         &lt;button type='submit'&gt;Log in&lt;/button&gt;\n       &lt;/form&gt;\n     &lt;/&gt;\n   )\n }\n}\n\nexport default LoginComponent;</code></pre><p style=\"margin-left:0px;\">Como precisamos fazer um fetch na api de usuários usamos o método de ciclo de vida <i>componentDidMount </i>que irá checar se <i>userId </i>foi passado, caso seja, faremos um fetch na api e atualizaremos o state user com os dados do usuário para apresentação.<br>O método <i>userDescriptionRender</i> ficará responsável por renderizar a descrição caso o user seja encontrado.</p><p style=\"margin-left:0px;\">Agora vamos fazer a mesma implementação usando o <strong>useEffect.</strong></p><pre><code class=\"language-plaintext\">\nimport React, { useState, useEffect } from 'react';\nconst LoginComponent = ({ userId }) =&gt; {\n const initialFormData = { username: '', password: '' };\n const [ formData, setFormData ] = useState(initialFormData);\n const [ user, setUser ] = useState(null);\n useEffect(() =&gt; {    \n   async function fetchUser() {\n     const response = await fetch(`https://reqres.in/api/users/${userId}`);\n     const { data } = await response.json();\n     setUser(data);\n   }\n   fetchUser();\n }, [userId]);\n \n const handleChange = event =&gt; {\n   const { id, value } = event.target;\n   setFormData({ ...formData, [id]: value });\n }\n const handleSubmit = event =&gt; {\n   event.preventDefault();\n   // ... post login user\n }\n const userDescriptionRender = () =&gt; (\n   (user) ?\n     `Welcome ${user.first_name}` :\n     'SignIn'\n );\n \n return (\n   &lt;&gt;\n     &lt;form onSubmit={handleSubmit}&gt;\n       &lt;h1&gt;{ userDescriptionRender() }&lt;/h1&gt;\n       &lt;label&gt;UserName&lt;/label&gt;\n       &lt;input type='text' id='username' onChange={handleChange} value={formData.username} /&gt;\n       &lt;label&gt;Password&lt;/label&gt;\n       &lt;input type='password' id='password' onChange={handleChange} value={formData.password} /&gt;\n       &lt;button type='submit'&gt;Log in&lt;/button&gt;\n     &lt;/form&gt;\n   &lt;/&gt;\n )\n}\nexport default LoginComponent;</code></pre><p style=\"margin-left:0px;\">Vamos olhar para esse component:</p><p style=\"margin-left:0px;\"><strong>Line 3: </strong>Vamos fazer um destructuring para pegar o userId das props do nosso componente de login.<br><strong>Line 6:</strong> Definimos um novo state chamado user que será responsável por guardar os dados do usuário.<br><strong>Line 8:</strong> Definimos o nosso efeito (<strong>useEffect</strong>) que vai receber dois parâmetros;<br><strong>Primeiro parâmetro: </strong>O primeiro parâmetro que <strong>useEffect </strong>espera é a função que irá executar o efeito de renderização.<br><strong>Segundo parâmetro:</strong> O segundo parâmetro que <strong>useEffect </strong>espera é um array (opcional) com as dependências externas que aquele efeito de renderização “olhará” antes de ser executado. Mais o que isso quer dizer ?<br>No nosso exemplo passamos o userId como dependência do efeito de renderização, isso significa que estamos falando para o nosso efeito que ele só precisa ser “reexecutado” caso userId mudar.</p><p style=\"margin-left:0px;\">&nbsp;</p><p style=\"margin-left:0px;\"><strong>Referencias:</strong></p><ul><li><span style=\"background-color:rgb(3,0,0);color:rgb(226,214,212);\">hooks-effect: </span><a href=\"https://reactjs.org/docs/hooks-effect.html\"><u>https://reactjs.org/docs/hooks-effect.html</u></a></li><li><span style=\"background-color:rgb(3,0,0);color:rgb(226,214,212);\">hooks-faq: </span><a href=\"https://reactjs.org/docs/hooks-faq.html\"><u>https://reactjs.org/docs/hooks-faq.html</u></a></li><li><span style=\"background-color:rgb(3,0,0);color:rgb(226,214,212);\">eslint-plugin-react-hooks: </span><a href=\"https://github.com/facebook/react/issues/14920\"><u>https://github.com/facebook/react/issues/14920</u></a></li><li><span style=\"background-color:rgb(3,0,0);color:rgb(226,214,212);\">A Complete Guide to useEffect: </span><a href=\"https://overreacted.io/a-complete-guide-to-useeffect/\"><u>https://overreacted.io/a-complete-guide-to-useeffect/</u></a></li></ul><p>&nbsp;</p><p style=\"margin-left:0px;\">&nbsp;</p><p style=\"margin-left:0px;\">&nbsp;</p>",
+        "allowComments": true,
+        "cover": {
+          "id": "60678607d725ea28d1dd3434",
+          "alternativeText": "UseEffect Hook",
+          "url": "https://res.cloudinary.com/danielv/image/upload/v1617397251/use_Effect_04c9ee2a46.jpg"
+        },
+        "categories": [
+          {
+            "id": "6067612d9fef6136444d596f",
+            "displayName": "Javascript",
+            "slug": "javascript"
+          }
+        ],
+        "tags": [
+          {
+            "id": "606761c79fef6136444d5973",
+            "displayName": "useEffect",
+            "slug": "use-effect"
+          }
+        ],
+        "author": {
+          "id": "606760f49fef6136444d596e",
+          "displayName": "Daniel Vitor",
+          "slug": "daniel-vitor"
+        }
+      }
+    ]
+  }
+}
