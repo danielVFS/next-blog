@@ -22,6 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 800;
     color: ${({ theme }) => theme.colors.primary}
   }
+  /*
   a {
     color: ${({ theme }) => theme.colors.secondary};
     text-decoration: none;
@@ -40,4 +41,5 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     overflow-y: auto;
   }
+  */
 `;

@@ -11,9 +11,9 @@ export const theme = {
       default: "'Open Sans', sans-serif",
     },
     sizes: {
-      xsmall: '8rem',
+      lsmall: '0.8rem',
       small: '1.6rem',
-      xmedium: '2.0rem',
+      xsmall: '2.0rem',
       medium: '2.4rem',
       large: '3.2rem',
       xlarge: '4.0rem',
@@ -26,7 +26,7 @@ export const theme = {
     lteMedium: '(max-width: 768px)',
   },
   spacings: {
-    xsmall: '8rem',
+    lsmall: '0.8rem',
     small: '1.6rem',
     medium: '2.4rem',
     large: '3.2rem',
