@@ -11,7 +11,7 @@ export default {
 
 export const Template: Story<FooterProps> = (args) => {
   return (
-    <div>
+    <div style={{ marginTop: 200 }}>
       <Footer {...args} />
     </div>
   );

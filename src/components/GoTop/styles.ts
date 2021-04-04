@@ -7,7 +7,7 @@ export const Container = styled.a`
     right: 2rem;
     z-index: 6;
 
-    background: ${theme.colors.primaryColor};
+    background: ${theme.colors.primary};
     color: ${theme.colors.white};
     display: flex;
     align-items: center;
@@ -15,6 +15,6 @@ export const Container = styled.a`
     border-radius: 50%;
     width: 5rem;
     height: 5rem;
-    opacity: 0.7;
+    opacity: 0.9;
   `}
 `;

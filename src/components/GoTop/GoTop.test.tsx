@@ -16,7 +16,7 @@ describe('<GoTop />', () => {
         bottom: 2rem;
         right: 2rem;
         z-index: 6;
-        background: #0A1128;
+        background: #000000;
         color: #FFFFFF;
         display: -webkit-box;
         display: -webkit-flex;
@@ -33,7 +33,7 @@ describe('<GoTop />', () => {
         border-radius: 50%;
         width: 5rem;
         height: 5rem;
-        opacity: 0.7;
+        opacity: 0.9;
       }
 
       .c1 {
