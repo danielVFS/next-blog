@@ -27,6 +27,7 @@
     },
     "posts": [
       {
+        "createdAt": "2020-04-20",
         "id": "60678874d725ea28d1dd3435",
         "slug": "primeiros-passos-com-react-hooks-use-effect",
         "title": "Primeiros passos com React Hooks — useEffect.",
