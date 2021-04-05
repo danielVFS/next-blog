@@ -5,5 +5,3 @@ export const formatDate = (dateString: string): string => {
     dateStyle: 'medium',
   });
 };
-
-console.log(formatDate('2021-03-02T15:16:09.246+00:00'));
