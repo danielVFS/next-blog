@@ -20,10 +20,4 @@ describe('<ArticleHeader />', () => {
     expect(screen.getByText(props.excerpt)).toBeInTheDocument();
     expect(screen.getByText(formatDate(props.createdAt))).toBeInTheDocument();
   });
-
-  it('should match snapshot', () => {
-    const { container } = renderTheme(<ArticleHeader {...mock} />);
-
-    expect(container).toMatchSnapshot();
-  });
 });
