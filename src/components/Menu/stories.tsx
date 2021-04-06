@@ -6,6 +6,9 @@ export default {
   title: 'Menu',
   component: Menu,
   args: mock,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta<MenuProps>;
 
 export const Template: Story<MenuProps> = (args) => {
