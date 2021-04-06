@@ -14,11 +14,12 @@ describe('<HtmlContent />', () => {
     );
     expect(container.firstChild).toMatchInlineSnapshot(`
       .c0 {
-        font-size: 2.4rem;
+        font-size: calc(1.6rem + 0.2rem);
+        line-height: 1.5;
       }
 
       .c0 p {
-        margin: 4.0rem 0;
+        margin: 2.4rem 0;
       }
 
       .c0 a,
@@ -36,15 +37,29 @@ describe('<HtmlContent />', () => {
         filter: brightness(50%);
       }
 
+      .c0 code {
+        font-family: monospace;
+        color: #dc143c;
+        font-size: 1.6rem;
+        background: #DDDDDD;
+        padding: 0.2rem;
+        margin: 0.2rem;
+      }
+
       .c0 pre {
         background: #000000;
         padding: 2.4rem;
         font-family: monospace;
         font-size: 2.0rem;
         color: #FFFFFF;
-        margin: 4.0rem 0;
+        margin: 2.4rem 0;
         width: 100%;
         overflow-x: auto;
+      }
+
+      .c0 pre code {
+        color: inherit;
+        background: inherit;
       }
 
       .c0 img {
@@ -54,7 +69,7 @@ describe('<HtmlContent />', () => {
       .c0 .image {
         background: #DDDDDD;
         line-height: 0;
-        margin: 4.0rem 0;
+        margin: 2.4rem 0;
       }
 
       .c0 .image figcaption {
@@ -67,7 +82,7 @@ describe('<HtmlContent />', () => {
       .c0 .image-style-side {
         float: right;
         max-width: 50%;
-        margin: 2.4rem;
+        margin: 2.4rem 0;
       }
 
       .c0 hr {
@@ -77,7 +92,7 @@ describe('<HtmlContent />', () => {
 
       .c0 ul,
       .c0 ol {
-        margin: 4.0rem;
+        margin: 4.0rem 4.0rem;
       }
 
       .c0 .table {
@@ -89,12 +104,23 @@ describe('<HtmlContent />', () => {
       .c0 table {
         width: 100%;
         border-collapse: collapse;
+        margin: 2.4rem 0;
       }
 
       .c0 table td,
       .c0 table th {
         padding: 1.6rem;
         border: 0.1rem solid #DDDDDD;
+      }
+
+      .c0 blockquote {
+        border-left: 0.5rem solid #dc143c;
+        color: #AAAAAA;
+        -webkit-filter: brightness(80%);
+        filter: brightness(80%);
+        padding-left: 2.4rem;
+        font-style: italic;
+        margin: 2.4rem;
       }
 
       @media (max-width:768px) {
