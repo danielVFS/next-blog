@@ -5,6 +5,7 @@ import { Heading } from '../Heading';
 import { StrapiImage } from '../../shared-types/strapi-image';
 
 export type PostCardProps = {
+  id: string;
   title: string;
   cover: StrapiImage;
   excerpt: string;
