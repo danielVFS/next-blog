@@ -9,7 +9,7 @@ const wrapperChanger = (
   menuVisivle: MenuBehaviorProps['menuVisible'],
   theme: DefaultTheme,
 ) => css`
-  left: ${menuVisivle ? '0' : '-31.5rem'};
+  left: ${menuVisivle ? '0' : '-31rem'};
   overflow-y: ${menuVisivle ? 'auto' : 'hidden'};
 
   @media ${theme.media.lteMedium} {
@@ -59,7 +59,7 @@ const buttonChanger = (
   menuVisivle: MenuBehaviorProps['menuVisible'],
   theme: DefaultTheme,
 ) => css`
-  left: ${menuVisivle ? '26rem' : '1rem'};
+  left: ${menuVisivle ? '26rem' : '1.5rem'};
   color: ${menuVisivle ? theme.colors.secondary : theme.colors.white};
 
   @media ${theme.media.lteMedium} {
