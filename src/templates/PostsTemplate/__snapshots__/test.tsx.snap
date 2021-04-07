@@ -348,6 +348,7 @@ exports[`<PostsTemplate /> should match snapshot 1`] = `
 
 .c9 {
   margin-top: 6.4rem;
+  padding: 0 3.2rem;
 }
 
 .c13 {
@@ -379,6 +380,29 @@ exports[`<PostsTemplate /> should match snapshot 1`] = `
     float: none;
     max-width: 100%;
     margin: 0;
+  }
+}
+
+@media (max-width:360px) {
+  .c10 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding-bottom: 25px;
+  }
+
+  .c10 > .c5 {
+    margin: 0 0 2.4rem 0;
+  }
+}
+
+@media (max-width:360px) {
+  .c11 {
+    margin-left: 0;
   }
 }
 
@@ -954,6 +978,7 @@ exports[`<PostsTemplate /> should match snapshot without posts 1`] = `
 
 .c9 {
   margin-top: 6.4rem;
+  padding: 0 3.2rem;
 }
 
 .c13 {
@@ -985,6 +1010,29 @@ exports[`<PostsTemplate /> should match snapshot without posts 1`] = `
     float: none;
     max-width: 100%;
     margin: 0;
+  }
+}
+
+@media (max-width:360px) {
+  .c10 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding-bottom: 25px;
+  }
+
+  .c10 > .c5 {
+    margin: 0 0 2.4rem 0;
+  }
+}
+
+@media (max-width:360px) {
+  .c11 {
+    margin-left: 0;
   }
 }
 
