@@ -7,7 +7,7 @@ import mock from './mock';
 const props: PostTagsProps = mock;
 
 describe('<PostTags />', () => {
-  it('should render', () => {
+  it('should render two tags', () => {
     renderTheme(<PostTags {...props} />);
 
     expect(screen.getByText(/tags:/i)).toBeInTheDocument();
@@ -16,6 +16,12 @@ describe('<PostTags />', () => {
 
   it('should should match snapshot', () => {
     const { container } = renderTheme(<PostTags {...props} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should should match snapshot with no tags', () => {
+    const { container } = renderTheme(<PostTags {...props} tags={undefined} />);
 
     expect(container).toMatchSnapshot();
   });

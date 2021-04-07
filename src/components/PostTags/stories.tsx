@@ -11,10 +11,18 @@ export default {
   },
 } as Meta<PostTagsProps>;
 
-export const Template: Story<PostTagsProps> = (args) => {
+export const WithTags: Story<PostTagsProps> = (args) => {
   return (
     <div style={{ padding: '0 2.4rem' }}>
       <PostTags {...args} />
+    </div>
+  );
+};
+
+export const WithoutTags: Story<PostTagsProps> = (args) => {
+  return (
+    <div style={{ padding: '0 2.4rem' }}>
+      <PostTags {...args} tags={undefined} />
     </div>
   );
 };
