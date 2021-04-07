@@ -1,28 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BaseTemplate /> should match snapshot 1`] = `
+exports[`<PostsTemplate /> should match snapshot 1`] = `
+.c6 {
+  color: #000000;
+  line-height: 1.2;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.c12 {
+  color: #000000;
+  line-height: 1.2;
+  font-size: 2.4rem;
+  text-transform: none;
+}
+
+.c16 .c5 {
+  margin: 0;
+  margin-top: calc(1.6rem - 0.6rem);
+  margin-bottom: 1.6rem;
+}
+
+.c16 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.c16:hover a {
+  color: #dc143c;
+}
+
+.c16:hover img {
+  opacity: 0.8;
+}
+
+.c17 {
+  max-width: 100%;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.c17:hover {
+  opacity: 0.8;
+}
+
+.c14 {
+  width: 100%;
+}
+
 .c15 {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(28rem,1fr));
+  gap: 3.2rem;
+  padding: 3.2rem;
+}
+
+.c19 {
   text-align: center;
   font-size: 1.6rem;
   border-top: 0.1rem solid #DDDDDD;
 }
 
-.c15 a {
+.c19 a {
   color: inherit;
 }
 
-.c16 {
+.c20 {
   font-size: calc(1.6rem + 0.2rem);
   line-height: 1.5;
 }
 
-.c16 p {
+.c20 p {
   margin: 2.4rem 0;
 }
 
-.c16 a,
-.c16 a:visited,
-.c16 a:link {
+.c20 a,
+.c20 a:visited,
+.c20 a:link {
   color: #dc143c;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -30,12 +89,12 @@ exports[`<BaseTemplate /> should match snapshot 1`] = `
   transition: all 300ms ease-in-out;
 }
 
-.c16 a:hover {
+.c20 a:hover {
   -webkit-filter: brightness(50%);
   filter: brightness(50%);
 }
 
-.c16 code {
+.c20 code {
   font-family: monospace;
   color: #dc143c;
   font-size: 1.6rem;
@@ -44,7 +103,7 @@ exports[`<BaseTemplate /> should match snapshot 1`] = `
   margin: 0.2rem;
 }
 
-.c16 pre {
+.c20 pre {
   background: #000000;
   padding: 2.4rem;
   font-family: monospace;
@@ -55,63 +114,63 @@ exports[`<BaseTemplate /> should match snapshot 1`] = `
   overflow-x: auto;
 }
 
-.c16 pre code {
+.c20 pre code {
   color: inherit;
   background: inherit;
 }
 
-.c16 img {
+.c20 img {
   max-width: 100%;
 }
 
-.c16 .image {
+.c20 .image {
   background: #DDDDDD;
   line-height: 0;
   margin: 2.4rem 0;
 }
 
-.c16 .image figcaption {
+.c20 .image figcaption {
   font-size: 1.6rem;
   padding: 1.6rem;
   text-align: center;
   line-height: 1.3;
 }
 
-.c16 .image-style-side {
+.c20 .image-style-side {
   float: right;
   max-width: 50%;
   margin: 2.4rem 0;
 }
 
-.c16 hr {
+.c20 hr {
   border: none;
   border-bottom: 0.1rem solid #DDDDDD;
 }
 
-.c16 ul,
-.c16 ol {
+.c20 ul,
+.c20 ol {
   margin: 4.0rem 4.0rem;
 }
 
-.c16 .table {
+.c20 .table {
   width: 100%;
   overflow: hidden;
   overflow-x: auto;
 }
 
-.c16 table {
+.c20 table {
   width: 100%;
   border-collapse: collapse;
   margin: 2.4rem 0;
 }
 
-.c16 table td,
-.c16 table th {
+.c20 table td,
+.c20 table th {
   padding: 1.6rem;
   border: 0.1rem solid #DDDDDD;
 }
 
-.c16 blockquote {
+.c20 blockquote {
   border-left: 0.5rem solid #dc143c;
   color: #AAAAAA;
   -webkit-filter: brightness(80%);
@@ -121,7 +180,7 @@ exports[`<BaseTemplate /> should match snapshot 1`] = `
   margin: 2.4rem;
 }
 
-.c17 {
+.c21 {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -150,20 +209,6 @@ exports[`<BaseTemplate /> should match snapshot 1`] = `
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
-}
-
-.c6 {
-  color: #000000;
-  line-height: 1.2;
-  font-size: 2.4rem;
-  text-transform: uppercase;
-}
-
-.c12 {
-  color: #000000;
-  line-height: 1.2;
-  font-size: 2.4rem;
-  text-transform: none;
 }
 
 .c7 {
@@ -312,19 +357,25 @@ exports[`<BaseTemplate /> should match snapshot 1`] = `
   margin-bottom: 6.4rem;
 }
 
-.c14 {
+.c18 {
   max-width: 120rem;
   width: 100%;
   margin: 0 auto;
   padding: 3.2rem;
 }
 
+@media (max-width:360px) {
+  .c15 {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width:768px) {
-  .c16 {
+  .c20 {
     font-size: 2.0rem;
   }
 
-  .c16 .image-style-side {
+  .c20 .image-style-side {
     float: none;
     max-width: 100%;
     margin: 0;
@@ -449,16 +500,104 @@ exports[`<BaseTemplate /> should match snapshot 1`] = `
     <div
       class="c13"
     >
-      Olá mundo
-    </div>
-    <footer
-      class="c14"
-    >
       <div
-        class="c15"
+        class="c14"
       >
         <div
-          class="c16"
+          class="c15"
+        >
+          <div
+            class="c16"
+          >
+            <a
+              href="/post/vis-nobis-veritus-maluisset-id-nonumy-adversarium"
+            >
+              <img
+                alt="Vis nobis veritus maluisset id, nonumy adversarium"
+                class="c17"
+                src="https://res.cloudinary.com/dlizakp2a/image/upload/v1614698965/Ubuntu_gel_by_Midge_Mantissa_Sinnaeve_7caea7ddb4.jpg"
+              />
+            </a>
+            <h2
+              class="c5 c12"
+            >
+              <a
+                href="/post/vis-nobis-veritus-maluisset-id-nonumy-adversarium"
+              >
+                Vis nobis veritus maluisset id, nonumy adversarium
+              </a>
+            </h2>
+            <p
+              class=""
+            >
+              Fugit aliquip erroribus eu eam, an mel vidit doctus. Vis nobis veritus maluisset id, nonumy adversarium neglegentur est ut. Tation persius pri eu, modo minim fastidii mei no. Ad tota pertinax definiebas eam.
+            </p>
+          </div>
+          <div
+            class="c16"
+          >
+            <a
+              href="/post/sea-array-destructuring-dicat-fabulas-consetetur"
+            >
+              <img
+                alt="Sea Array Destructuring dicat fabulas consetetur "
+                class="c17"
+                src="https://res.cloudinary.com/dlizakp2a/image/upload/v1614699042/Origin_of_nature_by_Julian_Tomasini_dcfdd17cbe.jpg"
+              />
+            </a>
+            <h2
+              class="c5 c12"
+            >
+              <a
+                href="/post/sea-array-destructuring-dicat-fabulas-consetetur"
+              >
+                Sea Array Destructuring dicat fabulas consetetur 
+              </a>
+            </h2>
+            <p
+              class=""
+            >
+              Quod oblique mei ne, cetero delicatissimi sea cu, cu est harum dicit verterem. Tota forensibus ut usu, luptatum dignissim persecuti vel ex. Mea nostrud instructior cu, et referrentur theophrastus eum. Pro in iuvaret senserit.
+            </p>
+          </div>
+          <div
+            class="c16"
+          >
+            <a
+              href="/post/quod-oblique-mei-ne-cetero-delicatissimi-sea"
+            >
+              <img
+                alt="Quod oblique mei ne, cetero delicatissimi sea"
+                class="c17"
+                src="https://res.cloudinary.com/dlizakp2a/image/upload/v1614699042/Origin_of_nature_by_Julian_Tomasini_dcfdd17cbe.jpg"
+              />
+            </a>
+            <h2
+              class="c5 c12"
+            >
+              <a
+                href="/post/quod-oblique-mei-ne-cetero-delicatissimi-sea"
+              >
+                Quod oblique mei ne, cetero delicatissimi sea
+              </a>
+            </h2>
+            <p
+              class=""
+            >
+              Et sed legere rationibus, vitae evertitur ad eam. Eu amet vero officiis vis. Ad nullam pericula neglegentur sit, vix ei regione legendos argumentum. Mei an quas convenire, nobis dicunt mei ut. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="c18"
+    >
+      <div
+        class="c19"
+      >
+        <div
+          class="c20"
         >
           <p>
             O texto da footer
@@ -468,7 +607,7 @@ exports[`<BaseTemplate /> should match snapshot 1`] = `
     </footer>
     <a
       aria-label="Go to top"
-      class="c17"
+      class="c21"
       href="#"
       title="Go to Top"
     >
