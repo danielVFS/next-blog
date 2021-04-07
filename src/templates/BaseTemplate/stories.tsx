@@ -3,7 +3,7 @@ import { BaseTemplate, BaseTemplateProps } from '.';
 import mock from './mock';
 
 export default {
-  title: 'Base',
+  title: 'BaseTemplate',
   component: BaseTemplate,
   args: mock,
   parameters: {
