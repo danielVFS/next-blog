@@ -4,6 +4,9 @@ import { PageNotFound } from '.';
 export default {
   title: 'PageNotFound',
   component: PageNotFound,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 export const Template: Story = (args) => {
