@@ -6,6 +6,8 @@ export const theme = {
     white: '#FFFFFF',
     mediumGray: '#DDDDDD',
     darkerGray: '#AAAAAA',
+    slateBlue: '#5c3cc5',
+    tomato: '#ff5d5b',
   },
   font: {
     family: {
