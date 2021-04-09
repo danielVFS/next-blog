@@ -3,12 +3,13 @@ import Head from 'next/head';
 import { useRouter } from 'next/dist/client/router';
 import { loadPosts, StrapiPostAndSettings } from '../../api/load-posts';
 import { PostTemplate } from '../../templates/PostTemplate';
+import { Loading } from '../../templates/Loading';
 
 export default function PostPage({ posts, setting }: StrapiPostAndSettings) {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
 
   const post = posts[0];

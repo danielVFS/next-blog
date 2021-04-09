@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/dist/client/router';
 import { loadPosts, StrapiPostAndSettings } from '../../api/load-posts';
 import { PostsTemplate } from '../../templates/PostsTemplate';
+import { Loading } from '../../templates/Loading';
 
 export default function CategoryPage({
   posts,
@@ -11,7 +12,7 @@ export default function CategoryPage({
   const router = useRouter();
 
   if (router.isFallback) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
 
   const categoryName = posts[0].categories.filter(
