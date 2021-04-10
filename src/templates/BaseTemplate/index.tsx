@@ -27,6 +27,16 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
         />
       </Styled.HeaderContainer>
 
+      <Styled.SearchContainer>
+        <form action="/search" method="GET">
+          <Styled.SearchInput
+            type="search"
+            placeholder="Encontre posts"
+            name="slug"
+          />
+        </form>
+      </Styled.SearchContainer>
+
       <Styled.ContentContainer>{children}</Styled.ContentContainer>
 
       <Styled.FooterContainer>
