@@ -25,7 +25,7 @@ exports[`<Menu /> should match snapshot 1`] = `
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   overflow-y: auto;
-  left: -31rem;
+  left: -32rem;
   overflow-y: hidden;
 }
 
