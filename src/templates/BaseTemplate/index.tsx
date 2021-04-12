@@ -39,7 +39,7 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
             type="search"
             placeholder="Encontre posts"
             name="slug"
-            defaultValue={router.query.slug}
+            defaultValue={router?.query?.slug || ''}
           />
         </form>
       </Styled.SearchContainer>
