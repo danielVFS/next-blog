@@ -9,7 +9,7 @@ const wrapperChanger = (
   menuVisivle: MenuBehaviorProps['menuVisible'],
   theme: DefaultTheme,
 ) => css`
-  left: ${menuVisivle ? '0' : '-31rem'};
+  left: ${menuVisivle ? '0' : '-32rem'};
   overflow-y: ${menuVisivle ? 'auto' : 'hidden'};
 
   @media ${theme.media.lteMedium} {
