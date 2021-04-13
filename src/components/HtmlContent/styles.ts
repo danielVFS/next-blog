@@ -20,7 +20,7 @@ export const Container = styled.div`
     a:hover {
       filter: brightness(50%);
     }
-
+    /*
     code {
       font-family: monospace;
       color: ${theme.colors.secondary};
@@ -45,7 +45,7 @@ export const Container = styled.div`
       color: inherit;
       background: inherit;
     }
-
+    */
     img {
       max-width: 100%;
     }
