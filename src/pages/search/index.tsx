@@ -19,7 +19,7 @@ export default function SearchPage({
     <>
       <Head>
         <title>
-          Pesquisa {router.query.slug} - {setting.blogName}
+          Pesquisa {router.query.q} - {setting.blogName}
         </title>
       </Head>
       <PostsTemplate settings={setting} posts={posts} variables={variables} />
@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps<StrapiPostAndSettings> = asy
   ctx,
 ) => {
   let data = null;
-  const query = ctx.query.slug || '';
+  const query = ctx.query.q || '';
 
   if (!query) {
     return {
