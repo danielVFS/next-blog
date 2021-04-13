@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as Styled from './styles';
 
 import { PostGrid } from '../../components/PostGrid';
@@ -22,6 +22,13 @@ export const PostsTemplate = ({
   const [stateVariables, setStateVariables] = useState(variables);
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [noMorePosts, setNoMorePosts] = useState(false);
+
+  useEffect(() => {
+    setStatePosts(posts);
+    setNoMorePosts(false);
+    setButtonDisabled(false);
+    setStateVariables(variables);
+  }, [posts, variables]);
 
   const handleLoadMorePosts = async () => {
     setButtonDisabled(true);
