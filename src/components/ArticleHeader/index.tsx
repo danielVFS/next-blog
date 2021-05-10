@@ -20,7 +20,7 @@ export const ArticleHeader = ({
 }: ArticleHeaderProps) => {
   return (
     <Styled.Wrapper>
-      <Heading as="h1" size="huge">
+      <Heading as="h1" size="big">
         {title}
       </Heading>
       <Styled.Excerpt>{excerpt}</Styled.Excerpt>

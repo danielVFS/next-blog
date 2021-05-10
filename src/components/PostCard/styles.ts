@@ -13,6 +13,11 @@ export const Wrapper = styled.div`
       text-decoration: none;
       color: inherit;
       transition: all 300ms ease-in-out;
+
+      img {
+        width: 100%;
+        height: 75%;
+      }
     }
 
     &:hover a {

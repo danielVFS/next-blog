@@ -24,38 +24,15 @@ export const Container = styled.div`
     a:hover {
       filter: brightness(50%);
     }
-    /*
-    code {
-      font-family: monospace;
-      color: ${theme.colors.secondary};
-      font-size: ${theme.font.sizes.small};
-      background: ${theme.colors.mediumGray};
-      padding: 0.2rem;
-      margin: 0.2rem;
-    }
 
-    pre {
-      background: ${theme.colors.primary};
-      padding: ${theme.spacings.medium};
-      font-family: monospace;
-      font-size: ${theme.font.sizes.xsmall};
-      color: ${theme.colors.white};
-      margin: ${theme.spacings.medium} 0;
-      width: 100%;
-      overflow-x: auto;
-    }
-
-    pre code {
-      color: inherit;
-      background: inherit;
-    }
-    */
     img {
       max-width: 100%;
     }
 
     .image {
-      background: ${theme.colors.mediumGray};
+      display: flex;
+      align-items: center;
+      justify-content: center;
       line-height: 0;
       margin: ${theme.spacings.medium} 0;
     }
