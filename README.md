@@ -38,8 +38,8 @@ um todo.
 <h4 align="center">
   💻 Blog - Demo
   <br>
-  ![](blog.gif)
 </h4>
+![](blog.gif)
 
 <br>
 
