@@ -34,12 +34,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Next Blog - Blog desenvolvido com Next.js para postagens sobre tecnologias como
 um todo.
-
 <h4 align="center">
   💻 Blog - Demo
   <br>
+  <img alt="Frontend" src="https://user-images.githubusercontent.com/54604875/117747383-7778d700-b1e4-11eb-8dfe-b7e70c14cfd6.gif">
 </h4>
-![](blog.gif)
 
 <br>
 
